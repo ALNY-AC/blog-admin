@@ -2,13 +2,20 @@ html,
 body {
     margin: 0;
     padding: 0;
+    color: #333;
+}
+
+a {
+    color: #333;
 }
 
 * {
     box-sizing: border-box;
 }
 
-body {}
+body {
+    background-color: #f6f6f6;
+}
 
 .clearfix {
     &:before,
@@ -19,4 +26,12 @@ body {}
     &:after {
         clear: both;
     }
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
 }

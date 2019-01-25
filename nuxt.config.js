@@ -10,7 +10,6 @@ module.exports = {
         }
     },
     css: [
-        '@/styles/styles.scss',
     ],
     build: {
     },
@@ -18,8 +17,8 @@ module.exports = {
         '~/plugins/main.js',
     ],
     server: {
-        port: 80,
-        host: 'admin.blog.cn',
+        port: 3030,
+        // host: 'admin.blog.cn',
         // default: 80
         // default: localhost
     },

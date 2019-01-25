@@ -1,14 +1,18 @@
-
 export default {
-    name: 'index',
+    name: 'OUrlList',
+    props: {},
     data() {
         return {
             routerList: [],
         };
     },
     methods: {
+        // 用于初始化一些数据
         init() {
+            this.routerList = this.$router.options.routes;
         },
+        // 用于更新一些数据
+        update() { },
     },
     // 计算属性
     computed: {},
@@ -33,7 +37,7 @@ export default {
     beforeDestroy() { },
     //Vue 实例销毁后调用。
     destroyed() { },
-    // 当捕获一个来自子孙组件的错误时被调用。此
+    // 当捕获一个来自子孙组件的错误时被调用。
     errorCaptured() { },
     // 包含 Vue 实例可用指令的哈希表。
     directives: {},

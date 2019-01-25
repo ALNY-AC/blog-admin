@@ -6,6 +6,7 @@ import userInfo from '../modus/UserInfo/UserInfo.js';
 let Http = axios.create({
     baseURL: url.serverUrl,
     transformRequest: [function (data) {
+
         if (data) {
             data = JSON.parse(JSON.stringify(data));
             let ret = [];
@@ -22,9 +23,6 @@ let Http = axios.create({
 
 // 添加一个请求拦截器
 Http.interceptors.request.use(function (conf) {
-
-    console.warn(conf);
-
     conf.headers.Authorization = "token " + userInfo.getToken();
     if (conf.method == 'get') {
         if (!conf.params) conf.params = {};
@@ -38,7 +36,8 @@ Http.interceptors.request.use(function (conf) {
 Http.interceptors.response.use(function (response) {
     return response.data;
 }, function (error) {
-    console.warn(error);
+    console.error('接口错误');
+    console.error(error);
     if (error.response.status == 401) {
         // 未登录
     }

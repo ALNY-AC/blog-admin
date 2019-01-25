@@ -9,6 +9,9 @@ import './swiper.js';
 import './muse.js';
 import './element.js';
 
+
+import '@/styles/styles.scss';
+
 Vue.prototype.$http = Http;
 
 

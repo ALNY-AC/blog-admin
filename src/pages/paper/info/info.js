@@ -1,13 +1,31 @@
-
 export default {
-    name: 'index',
+    name: 'info',
     data() {
         return {
-            routerList: [],
+            info: null,
+            id: '',
         };
     },
     methods: {
+        // 用于初始化一些数据
         init() {
+            this.id = this.$route.query.id;
+            this.update();
+        },
+        // 用于更新一些数据
+        update() {
+
+            this.$http.post('paper/get', {
+                id: this.id
+            }).then(res => {
+                console.warn(res);
+                if (res.res >= 0) {
+                    this.info = res.data;
+                } else {
+                    // 错误
+                }
+            });
+
         },
     },
     // 计算属性
@@ -33,7 +51,7 @@ export default {
     beforeDestroy() { },
     //Vue 实例销毁后调用。
     destroyed() { },
-    // 当捕获一个来自子孙组件的错误时被调用。此
+    // 当捕获一个来自子孙组件的错误时被调用。
     errorCaptured() { },
     // 包含 Vue 实例可用指令的哈希表。
     directives: {},

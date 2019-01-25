@@ -1,14 +1,37 @@
-
 export default {
-    name: 'index',
+    name: 'OPaperCard',
+    props: {
+        img: {
+            type: String,
+            default: '',
+        },
+        title: {
+            type: String,
+            default: '',
+        },
+        info: {
+            type: String,
+            default: '',
+        },
+        id: {
+            type: [String, Number],
+            default: '',
+        },
+        tags: {
+            type: Array,
+            default() {
+                return [];
+            },
+        }
+    },
     data() {
-        return {
-            routerList: [],
-        };
+        return {};
     },
     methods: {
-        init() {
-        },
+        // 用于初始化一些数据
+        init() { },
+        // 用于更新一些数据
+        update() { },
     },
     // 计算属性
     computed: {},
@@ -20,7 +43,6 @@ export default {
     beforeMount() { },
     // el 被新创建的 vm.el 替换，并挂载到实例上去之后调用该钩子。
     mounted() {
-        this.init();
         this.$nextTick(() => { });
     },
     // 数据更新时调用，发生在虚拟 DOM 打补丁之前。
@@ -33,7 +55,7 @@ export default {
     beforeDestroy() { },
     //Vue 实例销毁后调用。
     destroyed() { },
-    // 当捕获一个来自子孙组件的错误时被调用。此
+    // 当捕获一个来自子孙组件的错误时被调用。
     errorCaptured() { },
     // 包含 Vue 实例可用指令的哈希表。
     directives: {},

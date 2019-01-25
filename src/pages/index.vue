@@ -1,7 +1,7 @@
 <template>
-    <div id="Index">
-        http://admin.blog.cn/
-    </div>
+  <div id="Index">
+    <o-url-list></o-url-list>
+  </div>
 </template>
 <script src="./index.js"></script>
 <style lang="scss" scoped>
